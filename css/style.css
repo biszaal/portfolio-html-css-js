@@ -14,7 +14,7 @@
   --fw-bold: 900;
 
   --clr-light: #fff;
-  --clr-dark: #303030;
+  --clr-dark: #191919;
   --clr-accent: #398cbf;
 
   --fs-h1: 3rem;
@@ -89,6 +89,41 @@ strong {
 }
 
 /* Typography */
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid var(--clr-accent);
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: .15em;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: var(--clr-accent);
+  }
+}
 
 h1,
 h2,
@@ -185,6 +220,22 @@ header {
 
 .nav__link:hover {
   color: var(--clr-accent);
+}
+
+.current-project {
+  padding: 0.25em;
+  background: var(--clr-accent);
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-light);
+  top: 1em;
+  border-radius: 10px;
+  z-index: 1000;
 }
 
 .nav-toggle {
@@ -384,15 +435,17 @@ header {
 
 /* My Work */
 
+
 .my-work {
   background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
 }
 
-.portfolio {
+.portfolio__design {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 }
 
 .portfolio__item {
