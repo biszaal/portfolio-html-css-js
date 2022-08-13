@@ -90,38 +90,38 @@ strong {
 
 /* Typography */
 
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid var(--clr-accent);
-  white-space: nowrap;
-  margin: 0;
-  letter-spacing: .15em;
-  animation:
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0
+@media (min-width: 600px) {
+  .typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--clr-accent);
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: .15em;
+    animation:
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
   }
 
-  to {
-    width: 100%
-  }
-}
+  @keyframes typing {
+    from {
+      width: 0
+    }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-  from,
-  to {
-    border-color: transparent
+    to {
+      width: 100%
+    }
   }
 
-  50% {
-    border-color: var(--clr-accent);
+  @keyframes blink-caret {
+
+    from,
+    to {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: var(--clr-accent);
+    }
   }
 }
 
@@ -442,7 +442,7 @@ header {
   text-align: center;
 }
 
-.portfolio__design {
+.portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
