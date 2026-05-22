@@ -1,609 +1,626 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0b0d" />
     <link rel="icon" type="image/png" href="./img/logo.png" />
-    <title>Biszaal Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-    />
 
+    <title>Bishnu Aryal — Full-Stack & Mobile Developer</title>
+    <meta
+      name="description"
+      content="Bishnu Prasad Aryal — full-stack and React Native developer in Watford, UK. Building cross-platform apps, serverless AWS systems, and AI-powered tools."
+    />
+    <meta property="og:title" content="Bishnu Aryal — Full-Stack & Mobile Developer" />
+    <meta
+      property="og:description"
+      content="Cross-platform apps, serverless AWS systems, and AI-powered tools — built with measurable impact."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://biszaal.com" />
+    <meta property="og:image" content="https://biszaal.com/img/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Premium type (Fontshare) -->
     <link
-      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&dislay=swap"
+      href="https://api.fontshare.com/v2/css?f%5B%5D=clash-display@500,600,700&f%5B%5D=satoshi@400,500,700&f%5B%5D=geist-mono@400,500&display=swap"
       rel="stylesheet"
     />
+    <!-- Phosphor icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="img/Biszaal.png" alt="Biszaal" class="logo" />
-      </div>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-      <button class="nav-toggle" aria-label="toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-          <li class="nav__item">
-            <a href="#services" class="nav__link">Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#skills" class="nav__link">Skills</a>
-          </li>
-          <li class="nav__item">
-            <a href="#experience" class="nav__link">Experience</a>
-          </li>
-          <li class="nav__item">
-            <a href="#work" class="nav__link">Projects</a>
-          </li>
-          <li class="nav__item">
-            <a href="#certifications" class="nav__link">Certifications</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
+    <!-- ============ NAV ============ -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a href="#home" class="nav__brand"><span class="dot"></span>Bishnu Aryal</a>
+        <ul class="nav__links">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#services" class="nav__link">Capabilities</a></li>
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
         </ul>
+        <span class="nav__cta">
+          <a href="#contact" class="btn btn--primary">
+            Let's talk
+            <span class="btn__icon"><i class="ph ph-arrow-up-right"></i></span>
+          </a>
+        </span>
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+        </button>
       </nav>
     </header>
 
-    <!-- Introduction -->
+    <!-- Mobile overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" style="--i: 0">About</a>
+      <a href="#experience" style="--i: 1">Experience</a>
+      <a href="#services" style="--i: 2">Capabilities</a>
+      <a href="#work" style="--i: 3">Work</a>
+      <a href="#skills" style="--i: 4">Skills</a>
+      <a href="#contact" style="--i: 5">Contact</a>
+    </div>
 
-    <section class="intro" id="home">
-      <div class="intro-content">
-        <h1 class="section__title section__title--intro">
-          Hi, I am <strong class="typewriter">Bishnu Prasad Aryal</strong>
-        </h1>
-        <p class="section__subtitle section__subtitle--intro">
-          Full-Stack Developer | Watford, UK
-        </p>
-        <a href="#work" class="btn btn--intro">View My Work</a>
-      </div>
-      <div class="intro-illustration">
-        <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Developer Illustration -->
-          <rect x="50" y="100" width="300" height="200" rx="10" fill="#398cbf" opacity="0.1"/>
-          <rect x="70" y="120" width="260" height="160" rx="8" fill="#fff" stroke="#398cbf" stroke-width="2"/>
-          <rect x="90" y="140" width="220" height="2" fill="#398cbf"/>
-          <rect x="90" y="150" width="180" fill="#398cbf" height="2"/>
-          <rect x="90" y="160" width="200" fill="#398cbf" height="2" opacity="0.7"/>
-          <rect x="90" y="170" width="160" fill="#398cbf" height="2" opacity="0.5"/>
-          <circle cx="200" cy="60" r="30" fill="#398cbf"/>
-          <rect x="190" y="80" width="20" height="30" fill="#398cbf"/>
-          <circle cx="185" cy="55" r="3" fill="#fff"/>
-          <circle cx="215" cy="55" r="3" fill="#fff"/>
-        </svg>
-      </div>
-    </section>
-
-    <!-- My Service -->
-
-    <section class="my-services" id="services">
-      <h2 class="section__title section__title--services">Professional Services</h2>
-      <p class="services-intro">Delivering cutting-edge solutions with 3+ years of enterprise experience</p>
-      
-      <div class="services">
-        <div class="service">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Cross-Platform Mobile Development</h3>
-          <div class="service-highlights">
-            <span class="highlight">React Native</span>
-            <span class="highlight">iOS & Android</span>
-            <span class="highlight">App Store Deployment</span>
-          </div>
-          <p>
-            Expert in building high-performance mobile applications that work seamlessly across iOS and Android platforms. 
-            Specialized in React Native development with native module integration, push notifications, offline functionality, 
-            and App Store/Play Store deployment processes.
-          </p>
-          <ul class="service-features">
-            <li>Cross-platform compatibility ensuring 95%+ code reuse</li>
-            <li>Native performance optimization and memory management</li>
-            <li>Payment gateway integration with Stripe, PayPal, Apple Pay</li>
-            <li>Real-time features using WebSockets and Firebase</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <div class="service-icon">
-            <i class="fas fa-cloud"></i>
-          </div>
-          <h3>Cloud Architecture & DevOps</h3>
-          <div class="service-highlights">
-            <span class="highlight">AWS Certified</span>
-            <span class="highlight">Serverless</span>
-            <span class="highlight">CI/CD</span>
-          </div>
-          <p>
-            Comprehensive cloud solutions using AWS services with focus on scalability, security, and cost optimization. 
-            Experience with serverless architectures, microservices, containerization, and automated deployment pipelines 
-            for enterprise-grade applications.
-          </p>
-          <ul class="service-features">
-            <li>Serverless architecture with Lambda, API Gateway, DynamoDB</li>
-            <li>Infrastructure as Code using Terraform and CloudFormation</li>
-            <li>CI/CD pipelines with automated testing and deployment</li>
-            <li>Monitoring and alerting with CloudWatch and custom dashboards</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <div class="service-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>AI & Machine Learning Solutions</h3>
-          <div class="service-highlights">
-            <span class="highlight">Deep Learning</span>
-            <span class="highlight">Computer Vision</span>
-            <span class="highlight">92% Accuracy</span>
-          </div>
-          <p>
-            Advanced AI/ML solutions including computer vision, natural language processing, and predictive analytics. 
-            Proven track record in developing AI-powered applications with real-world impact, including diagnostic tools 
-            and intelligent recommendation systems.
-          </p>
-          <ul class="service-features">
-            <li>Computer vision applications with 90%+ accuracy rates</li>
-            <li>Custom neural networks using TensorFlow and PyTorch</li>
-            <li>Real-time inference optimization for mobile deployment</li>
-            <li>Data pipeline design for ML model training and validation</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <div class="service-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Full-Stack Web Development</h3>
-          <div class="service-highlights">
-            <span class="highlight">React/Next.js</span>
-            <span class="highlight">Node.js</span>
-            <span class="highlight">Scalable APIs</span>
-          </div>
-          <p>
-            End-to-end web application development using modern frameworks and best practices. Expertise in building 
-            scalable, maintainable applications with excellent user experience, robust backend systems, and optimized 
-            performance for high-traffic scenarios.
-          </p>
-          <ul class="service-features">
-            <li>Modern React/Next.js applications with SSR and static generation</li>
-            <li>RESTful and GraphQL APIs with Node.js and Express</li>
-            <li>Database design and optimization (MongoDB, PostgreSQL)</li>
-            <li>Performance optimization achieving 90+ Lighthouse scores</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="services-cta">
-        <a href="#contact" class="btn btn--primary">Start Your Project</a>
-        <a href="#work" class="btn btn--secondary">View My Work</a>
-      </div>
-    </section>
-
-    <!-- About Me -->
-    <section class="about-me" id="about">
-      <h2 class="section__title section__title--about">About Me</h2>
-      <p class="section__subtitle section__subtitle--about">
-        Full-Stack Software Developer
-      </p>
-
-      <div class="about--me__body">
-        <p>
-          <strong>Education:</strong> MSc Computer Science from Birmingham City University (2024) with Distinction, 
-          and BS Computer Science from Temple University Japan Campus (2022). Strong academic foundation in algorithms, 
-          data structures, software engineering principles, and advanced computing concepts.
-        </p>
-        <p>
-          <strong>Professional Experience:</strong> Full-stack developer with 3+ years experience building React Native apps, 
-          Node.js APIs, and AWS cloud solutions. Currently working as React Native Developer at Techmax, with previous 
-          roles at Rush Laundry and IT-Deutschland GBS. Proven track record in mobile development, backend integration, 
-          and leading technical teams.
-        </p>
-        <p>
-          <strong>Expertise:</strong> Specialized in cross-platform mobile applications, serverless AWS solutions, 
-          and scalable backend systems. Experience with machine learning projects including AI-powered tools. 
-          Passionate about creating user-centered solutions and mentoring junior developers.
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="my-skills" id="skills">
-      <h2 class="section__title section__title--skills">Technical Skills</h2>
-      
-      <div class="skills-illustration">
-        <svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Tech Stack Illustration -->
-          <rect x="50" y="50" width="200" height="120" rx="8" fill="#398cbf" opacity="0.1"/>
-          <rect x="70" y="30" width="160" height="80" rx="6" fill="#398cbf" opacity="0.8"/>
-          <rect x="80" y="40" width="140" height="4" fill="#fff"/>
-          <rect x="80" y="50" width="120" height="4" fill="#fff" opacity="0.8"/>
-          <rect x="80" y="60" width="100" height="4" fill="#fff" opacity="0.6"/>
-          <circle cx="90" cy="150" r="8" fill="#398cbf"/>
-          <circle cx="120" cy="150" r="8" fill="#398cbf"/>
-          <circle cx="150" cy="150" r="8" fill="#398cbf"/>
-          <circle cx="180" cy="150" r="8" fill="#398cbf"/>
-          <circle cx="210" cy="150" r="8" fill="#398cbf"/>
-        </svg>
-      </div>
-      
-      <div class="skills">
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <div class="skill-list">
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">TypeScript</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">SQL</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Frontend & Mobile</h3>
-          <div class="skill-list">
-            <span class="skill-item">React Native</span>
-            <span class="skill-item">React.js</span>
-            <span class="skill-item">Next.js</span>
-            <span class="skill-item">HTML5</span>
-            <span class="skill-item">CSS3</span>
-            <span class="skill-item">Tailwind CSS</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Backend & APIs</h3>
-          <div class="skill-list">
-            <span class="skill-item">Node.js</span>
-            <span class="skill-item">Express.js</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">Django</span>
-            <span class="skill-item">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Cloud & Database</h3>
-          <div class="skill-list">
-            <span class="skill-item">AWS Lambda</span>
-            <span class="skill-item">S3</span>
-            <span class="skill-item">DynamoDB</span>
-            <span class="skill-item">API Gateway</span>
-            <span class="skill-item">MongoDB</span>
-            <span class="skill-item">Firebase</span>
-            <span class="skill-item">Supabase</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Tools & DevOps</h3>
-          <div class="skill-list">
-            <span class="skill-item">Git</span>
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Terraform</span>
-            <span class="skill-item">Linux</span>
-            <span class="skill-item">Figma</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Professional Experience -->
-    <section class="experience" id="experience">
-      <h2 class="section__title section__title--experience">Professional Experience</h2>
-      <p class="section__subtitle section__subtitle--experience">
-        3+ Years of Full-Stack Development Excellence
-      </p>
-      
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">Aug 2024 - Present</div>
-            <h3>React Native Developer</h3>
-            <h4>Techmax | Birmingham, UK</h4>
-            <ul>
-              <li>Develop cross-platform mobile applications using React Native with AWS backend integration</li>
-              <li>Implement serverless solutions with AWS Lambda, DynamoDB, and API Gateway</li>
-              <li>Collaborate with teams to deliver scalable mobile solutions for business requirements</li>
-              <li>Optimize app performance achieving 40% faster load times</li>
-            </ul>
-            <div class="tech-highlights">
-              React Native • AWS • Lambda • DynamoDB • API Gateway
-            </div>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">Mar 2023 - Jul 2024</div>
-            <h3>Full-Stack Developer</h3>
-            <h4>Rush Laundry | Birmingham, UK</h4>
-            <ul>
-              <li>Built complete React Native application with Node.js backend and MongoDB integration</li>
-              <li>Led frontend/backend development and mentored junior developers on best practices</li>
-              <li>Optimized APIs and deployed AWS services for high availability and performance</li>
-              <li>Reduced API response times by 60% through database optimization</li>
-            </ul>
-            <div class="tech-highlights">
-              React Native • Node.js • MongoDB • AWS • Mentoring
-            </div>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">Mar 2022 - Aug 2022</div>
-            <h3>Software Developer Intern</h3>
-            <h4>IT-Deutschland GBS | Tokyo, Japan</h4>
-            <ul>
-              <li>Developed Python APIs and IoT solutions using Raspberry Pi for real-time data processing</li>
-              <li>Created Django web application with secure user authentication and data management</li>
-              <li>Implemented real-time data visualization dashboards</li>
-              <li>Contributed to 3 major IoT projects serving 1000+ users</li>
-            </ul>
-            <div class="tech-highlights">
-              Python • Django • Raspberry Pi • IoT • Real-time Processing
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- My Work -->
-    <section class="my-work" id="work">
-      <h2 class="section__title section__subtitle--work">My Work</h2>
-      <p class="section__subtitle section__subtitle--work">
-        Featured Projects & Applications
-      </p>
-
-      <div class="portfolio">
-        <div class="portfolio__item">
-          <div class="portfolio__content">
-            <h3>Expenzez - Personal Finance Tracker</h3>
-            <div class="project-metrics">
-              <span class="metric">Cross-Platform</span>
-              <span class="metric">Real-time Sync</span>
-              <span class="metric">Cloud-Native</span>
-            </div>
-            <p>Enterprise-grade expense tracking mobile application serving users across iOS and Android platforms. Implemented real-time data synchronization, advanced budget analytics, and automated expense categorization using machine learning algorithms.</p>
-            <div class="project-achievements">
-              <div class="achievement">
-                <i class="fas fa-chart-line"></i>
-                <span>40% improvement in user expense tracking accuracy through ML categorization</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-cloud"></i>
-                <span>99.9% uptime with serverless AWS architecture</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-mobile-alt"></i>
-                <span>Support for 10+ currencies with real-time exchange rates</span>
-              </div>
-            </div>
-            <div class="tech-stack">React Native • AWS Lambda • DynamoDB • Cognito • S3 • CloudWatch • SNS • Node.js</div>
-          </div>
-        </div>
-
-        <div class="portfolio__item">
-          <div class="portfolio__content">
-            <h3>iTrackHabit - Smart Habit Tracker</h3>
-            <div class="project-metrics">
-              <span class="metric">AI-Powered</span>
-              <span class="metric">Real-time Analytics</span>
-              <span class="metric">Behavioral Insights</span>
-            </div>
-            <p>Intelligent habit tracking application with predictive analytics and personalized recommendations. Features advanced streak algorithms, behavioral pattern analysis, and gamification elements to improve user engagement and habit formation success rates.</p>
-            <div class="project-achievements">
-              <div class="achievement">
-                <i class="fas fa-brain"></i>
-                <span>75% increase in habit completion rates through smart notifications</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-trophy"></i>
-                <span>Comprehensive achievement system with 50+ badges</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-chart-bar"></i>
-                <span>Advanced analytics dashboard with 15+ metrics</span>
-              </div>
-            </div>
-            <div class="tech-stack">React Native • Supabase • PostgreSQL • Real-time APIs</div>
-          </div>
-        </div>
-
-        <div class="portfolio__item">
-          <div class="portfolio__content">
-            <h3>AI Dyslexia Detection System</h3>
-            <div class="project-metrics">
-              <span class="metric">Deep Learning</span>
-              <span class="metric">92% Accuracy</span>
-              <span class="metric">Real-time Analysis</span>
-            </div>
-            <p>Advanced AI-powered diagnostic tool for early dyslexia detection through handwriting analysis. Implemented convolutional neural networks with 92% accuracy rate, processing over 1000 handwriting samples for pattern recognition and educational intervention recommendations.</p>
-            <div class="project-achievements">
-              <div class="achievement">
-                <i class="fas fa-microscope"></i>
-                <span>92% detection accuracy validated through clinical testing</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-clock"></i>
-                <span>Real-time analysis completing in under 3 seconds</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Educational recommendations for 5 learning improvement areas</span>
-              </div>
-            </div>
-            <div class="tech-stack">Python • TensorFlow • OpenCV • CNN • Machine Learning • Computer Vision</div>
-          </div>
-        </div>
-
-        <div class="portfolio__item">
-          <div class="portfolio__content">
-            <h3>E-commerce Mobile Platform</h3>
-            <div class="project-metrics">
-              <span class="metric">Full-Stack</span>
-              <span class="metric">Payment Gateway</span>
-              <span class="metric">Scalable Architecture</span>
-            </div>
-            <p>Complete e-commerce solution with advanced inventory management, secure payment processing, and real-time order tracking. Designed to handle high-volume transactions with microservices architecture and automated deployment pipelines.</p>
-            <div class="project-achievements">
-              <div class="achievement">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Support for 1000+ concurrent users with load balancing</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-credit-card"></i>
-                <span>Integrated 5+ payment gateways with fraud detection</span>
-              </div>
-              <div class="achievement">
-                <i class="fas fa-truck"></i>
-                <span>Real-time order tracking with GPS integration</span>
-              </div>
-            </div>
-            <div class="tech-stack">React Native • Node.js • MongoDB • Stripe API • Socket.io • Redis</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="certifications" id="certifications">
-      <h2 class="section__title section__title--certifications">Certifications</h2>
-      
-      <div class="cert-list">
-        <div class="cert-item">
-          <a href="https://www.coursera.org/account/accomplishments/records/5XSVF1UVCJY0" target="_blank" class="cert-link">
-            <h3>AWS Cloud Practitioner Essentials</h3>
-            <p>Amazon Web Services</p>
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="https://www.coursera.org/account/accomplishments/records/34TLRWTW0F0R" target="_blank" class="cert-link">
-            <h3>Introduction to DevOps</h3>
-            <p>IBM</p>
-          </a>
-        </div>
-        <div class="cert-item">
-          <a href="https://www.coursera.org/account/accomplishments/records/ZRW0VXC8W7DG" target="_blank" class="cert-link">
-            <h3>React Native</h3>
-            <p>Meta</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <h2 class="section__title section__title--contact">Let's Work Together</h2>
-      <p class="section__subtitle section__subtitle--contact">
-        Available for full-time opportunities and consulting projects
-      </p>
-      
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Email</h3>
-              <a href="mailto:biszaal@gmail.com">biszaal@gmail.com</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Phone</h3>
-              <a href="tel:+447729411417">+44-7729-411417</a>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Location</h3>
-              <p>Watford, United Kingdom</p>
-              <p class="availability">Available for remote work globally</p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-file-download"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Resume</h3>
-              <a href="./Resume_Bishal.pdf" download="Bishnu_Aryal_Resume.pdf" class="btn btn--download">
-                <i class="fas fa-download"></i>
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero container" id="home">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <span class="eyebrow reveal">Full-stack &amp; mobile developer</span>
+            <h1 class="hero__title reveal" style="--i: 1">
+              I build software<br />that <em>ships</em>.
+            </h1>
+            <p class="hero__lede reveal" style="--i: 2">
+              From a developer internship in Tokyo to leading mobile builds in the UK
+              — I design and ship <b>cross-platform apps</b>, <b>serverless AWS
+              systems</b>, and <b>AI-powered tools</b> with measurable impact.
+            </p>
+            <div class="hero__actions reveal" style="--i: 3">
+              <a href="#work" class="btn btn--primary">
+                View my work
+                <span class="btn__icon"><i class="ph ph-arrow-down"></i></span>
+              </a>
+              <a href="./Resume_Bishal.pdf" download="Bishnu_Aryal_Resume.pdf" class="btn btn--ghost">
                 Download CV
+                <span class="btn__icon"><i class="ph ph-arrow-down-simple"></i></span>
               </a>
             </div>
           </div>
-        </div>
-        
-        <div class="contact-illustration">
-          <svg width="350" height="250" viewBox="0 0 350 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Professional Contact Illustration -->
-            <rect x="50" y="50" width="250" height="150" rx="15" fill="#398cbf" opacity="0.1"/>
-            <rect x="70" y="70" width="210" height="110" rx="10" fill="#398cbf" opacity="0.8"/>
-            <circle cx="175" cy="40" r="20" fill="#398cbf"/>
-            <rect x="165" cy="55" width="20" height="25" fill="#398cbf"/>
-            <rect x="90" y="90" width="170" height="3" fill="#fff"/>
-            <rect x="90" y="105" width="140" height="3" fill="#fff" opacity="0.8"/>
-            <rect x="90" y="120" width="120" height="3" fill="#fff" opacity="0.6"/>
-            <rect x="90" y="135" width="100" height="3" fill="#fff" opacity="0.4"/>
-            <circle cx="90" cy="210" r="8" fill="#398cbf"/>
-            <circle cx="120" cy="210" r="8" fill="#398cbf"/>
-            <circle cx="150" cy="210" r="8" fill="#398cbf"/>
-            <rect x="200" y="200" width="60" height="20" rx="10" fill="#398cbf"/>
-          </svg>
-        </div>
-      </div>
-    </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2024 Bishnu Prasad Aryal. All rights reserved.</p>
-        <ul class="social-list">
-          <li class="social-list__item">
-            <a class="social-list__link" href="https://www.github.com/biszaal/">
-              <i class="fab fa-github"></i>
+          <div class="hero__visual reveal" style="--i: 2" aria-hidden="true">
+            <div class="glass-card">
+              <div class="glass-card__inner">
+                <div class="code-head">
+                  <span class="dots"><i></i><i></i><i></i></span>
+                  <span class="fname">developer.ts</span>
+                </div>
+                <div class="code-body">
+                  <span class="ln"><span class="c">// 3+ years building for production</span></span>
+                  <span class="ln"><span class="k">const</span> bishnu = {</span>
+                  <span class="ln">  role: <span class="s">"React Native Developer"</span>,</span>
+                  <span class="ln">  base: <span class="s">"Watford, UK"</span>,</span>
+                  <span class="ln">  stack: [<span class="s">"TypeScript"</span>, <span class="s">"AWS"</span>],</span>
+                  <span class="ln">  focus: <span class="s">"apps that scale"</span>,</span>
+                  <span class="ln">  shipping: <span class="k">true</span><span class="cursor"></span></span>
+                  <span class="ln">};</span>
+                </div>
+              </div>
+            </div>
+            <div class="badge-float">
+              <i class="ph ph-briefcase"></i>
+              React Native @ Techmax
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STATS ============ -->
+      <section class="stats section--tight" aria-label="Key facts">
+        <div class="container">
+          <h2 class="visually-hidden">By the numbers</h2>
+          <div class="stats__grid">
+            <div class="stat reveal" style="--i: 0">
+              <div class="stat__num num">3<span>+</span></div>
+              <div class="stat__label">Years building production software</div>
+            </div>
+            <div class="stat reveal" style="--i: 1">
+              <div class="stat__num">MSc<span>.</span></div>
+              <div class="stat__label">Computer Science, with Distinction</div>
+            </div>
+            <div class="stat reveal" style="--i: 2">
+              <div class="stat__num num">92<span>%</span></div>
+              <div class="stat__label">Accuracy on AI dyslexia detection</div>
+            </div>
+            <div class="stat reveal" style="--i: 3">
+              <div class="stat__num num">3</div>
+              <div class="stat__label">Products built end-to-end — Expenzez, iTrackHabit, Rush Laundry</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section container" id="about">
+        <h2 class="visually-hidden">About me</h2>
+        <div class="about__grid">
+          <div class="about__lead reveal">
+            A full-stack developer who cares about the <em>craft</em> behind the
+            product — clean architecture, real performance, and interfaces people
+            actually enjoy using.
+          </div>
+          <div class="about__body">
+            <p class="reveal" style="--i: 1">
+              <strong>The journey.</strong> I started in Tokyo with a BS in Computer
+              Science from Temple University's Japan campus, then earned an MSc in
+              Computer Science from Birmingham City University with Distinction. Along
+              the way I moved from IoT prototypes to shipping mobile apps used in the
+              real world.
+            </p>
+            <p class="reveal" style="--i: 2">
+              <strong>What I do now.</strong> I'm a React Native developer building
+              cross-platform apps backed by Node.js APIs and serverless AWS. I've led
+              frontend and backend work, mentored junior developers, and tuned systems
+              for speed — cutting API response times by 60% and load times by 40%.
+            </p>
+            <p class="reveal" style="--i: 3">
+              <strong>How I work.</strong> I like problems that span the stack: a clean
+              mobile UI, a resilient API behind it, and the cloud plumbing that keeps it
+              fast and cheap. I'm just as comfortable with a machine-learning pipeline as
+              a CI/CD one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCE / TIMELINE ============ -->
+      <section class="section container" id="experience">
+        <div class="section-head">
+          <span class="eyebrow reveal">The path so far</span>
+          <h2 class="reveal" style="--i: 1">Experience</h2>
+          <p class="reveal" style="--i: 2">
+            Three roles across two continents, each one a step deeper into building
+            software that real users depend on.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="t-item reveal">
+            <div class="t-item__date">Aug 2024 — Present</div>
+            <h3 class="t-item__role">React Native Developer</h3>
+            <p class="t-item__org">Techmax · Birmingham, UK</p>
+            <ul>
+              <li>Build cross-platform mobile apps in React Native with an AWS backend.</li>
+              <li>Implement serverless flows with Lambda, DynamoDB, and API Gateway.</li>
+              <li>Partner with teams to ship scalable features against business needs.</li>
+              <li>Optimised app performance for 40% faster load times.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">React Native</span><span class="tag">AWS</span>
+              <span class="tag">Lambda</span><span class="tag">DynamoDB</span>
+              <span class="tag">API Gateway</span>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <div class="t-item__date">Mar 2023 — Jul 2024</div>
+            <h3 class="t-item__role">Full-Stack Developer</h3>
+            <p class="t-item__org">Rush Laundry · Birmingham, UK</p>
+            <ul>
+              <li>Built a complete React Native app with a Node.js and MongoDB backend.</li>
+              <li>Led frontend and backend work and mentored junior developers.</li>
+              <li>Deployed AWS services for high availability and performance.</li>
+              <li>Cut API response times by 60% through database optimisation.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">React Native</span><span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span><span class="tag">AWS</span>
+              <span class="tag">Mentoring</span>
+            </div>
+          </article>
+
+          <article class="t-item reveal">
+            <div class="t-item__date">Mar 2022 — Aug 2022</div>
+            <h3 class="t-item__role">Software Developer Intern</h3>
+            <p class="t-item__org">IT-Deutschland GBS · Tokyo, Japan</p>
+            <ul>
+              <li>Built Python APIs and IoT solutions on Raspberry Pi for real-time data.</li>
+              <li>Created a Django web app with secure authentication and data management.</li>
+              <li>Implemented real-time data-visualisation dashboards.</li>
+              <li>Contributed to 3 IoT projects serving 1,000+ users.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Django</span>
+              <span class="tag">Raspberry Pi</span><span class="tag">IoT</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ CAPABILITIES / BENTO ============ -->
+      <section class="section container" id="services">
+        <div class="section-head">
+          <span class="eyebrow reveal">What I build</span>
+          <h2 class="reveal" style="--i: 1">Capabilities</h2>
+          <p class="reveal" style="--i: 2">
+            Four areas where I do my best work — from the screen in your hand to the
+            cloud that powers it.
+          </p>
+        </div>
+
+        <div class="bento">
+          <article class="cap reveal">
+            <span class="cap__icon"><i class="ph ph-device-mobile-camera"></i></span>
+            <h3>Cross-platform mobile</h3>
+            <p>
+              High-performance React Native apps for iOS and Android — native modules,
+              push notifications, offline support, and store deployment.
+            </p>
+            <ul class="cap__features">
+              <li>95%+ shared code across platforms</li>
+              <li>Stripe, PayPal &amp; Apple Pay integration</li>
+              <li>Real-time features over WebSockets</li>
+            </ul>
+          </article>
+
+          <article class="cap reveal" style="--i: 1">
+            <span class="cap__icon"><i class="ph ph-cloud"></i></span>
+            <h3>Cloud &amp; DevOps</h3>
+            <p>
+              Scalable, cost-aware AWS architecture — serverless services, IaC, and
+              automated pipelines for enterprise-grade apps.
+            </p>
+            <ul class="cap__features">
+              <li>Lambda, API Gateway, DynamoDB</li>
+              <li>Terraform &amp; CloudFormation IaC</li>
+              <li>CI/CD with automated testing</li>
+            </ul>
+          </article>
+
+          <article class="cap cap--wide reveal" style="--i: 2">
+            <div class="cap__main">
+              <span class="cap__icon"><i class="ph ph-brain"></i></span>
+              <h3>AI &amp; machine learning</h3>
+              <p>
+                Computer vision, NLP, and predictive analytics that ship — including a
+                diagnostic tool that reached 92% accuracy on its test set.
+              </p>
+            </div>
+            <ul class="cap__features">
+              <li>Computer vision at 90%+ accuracy</li>
+              <li>Custom networks in TensorFlow &amp; PyTorch</li>
+              <li>On-device inference optimisation</li>
+              <li>Training &amp; validation data pipelines</li>
+            </ul>
+          </article>
+
+          <article class="cap cap--wide reveal" style="--i: 3">
+            <div class="cap__main">
+              <span class="cap__icon"><i class="ph ph-code"></i></span>
+              <h3>Full-stack web</h3>
+              <p>
+                End-to-end web apps with modern frameworks — scalable, maintainable, and
+                tuned for high traffic.
+              </p>
+            </div>
+            <ul class="cap__features">
+              <li>React / Next.js with SSR &amp; SSG</li>
+              <li>REST &amp; GraphQL APIs on Node.js</li>
+              <li>MongoDB &amp; PostgreSQL design</li>
+              <li>90+ Lighthouse performance</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section class="section container" id="work">
+        <div class="section-head">
+          <span class="eyebrow reveal">Selected work</span>
+          <h2 class="reveal" style="--i: 1">Things I've built</h2>
+          <p class="reveal" style="--i: 2">
+            A few projects that show the range — finance, habits, healthcare AI, and
+            commerce. Screenshots are placeholders; swap in real ones anytime.
+          </p>
+        </div>
+
+        <div class="work-list">
+          <!-- Project 1 -->
+          <article class="project reveal">
+            <div class="project__media" aria-hidden="true">
+              <span class="media-tag">Live · iOS &amp; Android</span>
+              <i class="ph ph-wallet media-mark"></i>
+            </div>
+            <div class="project__body">
+              <span class="project__index">01 / 05</span>
+              <h3 class="project__title">Expenzez — personal finance tracker</h3>
+              <div class="metrics">
+                <span class="metric">Cross-platform</span>
+                <span class="metric">AI insights</span>
+                <span class="metric">Serverless AWS</span>
+              </div>
+              <p class="project__desc">
+                A React Native expense tracker that imports transactions manually, by
+                CSV, or from bank statements, auto-categorises spending, and surfaces
+                budgets, goals, and trends — with AI-generated insights.
+              </p>
+              <div class="achievements">
+                <div class="achievement"><i class="ph ph-brain"></i><span>AI categorisation and spending insights via OpenAI</span></div>
+                <div class="achievement"><i class="ph ph-cloud"></i><span>Serverless AWS backend — Lambda with Cognito auth</span></div>
+                <div class="achievement"><i class="ph ph-lock-key"></i><span>Budgets, goals, bill reminders, and PIN security</span></div>
+              </div>
+              <p class="project__stack">React Native · Expo · AWS Lambda · DynamoDB · Cognito · OpenAI · Node.js</p>
+              <div class="project__links">
+                <a href="https://apps.apple.com/app/id6751338089" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                  App Store <span class="btn__icon"><i class="ph ph-apple-logo"></i></span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.biszaaltech.expenzez" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  Play Store <span class="btn__icon"><i class="ph ph-google-play-logo"></i></span>
+                </a>
+                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project reveal">
+            <div class="project__media" aria-hidden="true">
+              <span class="media-tag">Mobile · Analytics</span>
+              <i class="ph ph-chart-line-up media-mark"></i>
+            </div>
+            <div class="project__body">
+              <span class="project__index">02 / 05</span>
+              <h3 class="project__title">iTrackHabit — smart habit tracker</h3>
+              <div class="metrics">
+                <span class="metric">AI insights</span>
+                <span class="metric">Social challenges</span>
+                <span class="metric">Analytics</span>
+              </div>
+              <p class="project__desc">
+                A habit tracker built around streaks and accountability — achievements,
+                social challenges with friends, an analytics calendar, and AI-generated
+                insights to keep momentum going.
+              </p>
+              <div class="achievements">
+                <div class="achievement"><i class="ph ph-brain"></i><span>AI insights and progress analytics</span></div>
+                <div class="achievement"><i class="ph ph-users-three"></i><span>Social challenges and friends for accountability</span></div>
+                <div class="achievement"><i class="ph ph-trophy"></i><span>Achievements, streaks, and smart reminders</span></div>
+              </div>
+              <p class="project__stack">React Native · Expo · TypeScript · Push notifications</p>
+              <div class="project__links">
+                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 — Rush Laundry (verified from repo) -->
+          <article class="project reveal">
+            <div class="project__media" aria-hidden="true">
+              <span class="media-tag">Mobile · Marketplace</span>
+              <i class="ph ph-washing-machine media-mark"></i>
+            </div>
+            <div class="project__body">
+              <span class="project__index">03 / 05</span>
+              <h3 class="project__title">Rush Laundry — on-demand laundry platform</h3>
+              <div class="metrics">
+                <span class="metric">Three roles</span>
+                <span class="metric">Real-time orders</span>
+                <span class="metric">Stripe payments</span>
+              </div>
+              <p class="project__desc">
+                An on-demand laundry marketplace connecting customers, laundry
+                businesses, and delivery riders — with live order tracking and in-app
+                payments. I built the React Native app and the Node.js / MongoDB backend.
+              </p>
+              <div class="achievements">
+                <div class="achievement"><i class="ph ph-users-three"></i><span>Customer, laundry, and rider flows in one platform</span></div>
+                <div class="achievement"><i class="ph ph-broadcast"></i><span>Real-time order updates over Socket.io</span></div>
+                <div class="achievement"><i class="ph ph-credit-card"></i><span>In-app payments with Stripe</span></div>
+              </div>
+              <p class="project__stack">React Native · Expo · Node.js · Express · MongoDB · Socket.io · Stripe</p>
+              <div class="project__links">
+                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project reveal">
+            <div class="project__media" aria-hidden="true">
+              <span class="media-tag">AI · Healthcare</span>
+              <i class="ph ph-brain media-mark"></i>
+            </div>
+            <div class="project__body">
+              <span class="project__index">04 / 05</span>
+              <h3 class="project__title">AI dyslexia detection</h3>
+              <div class="metrics">
+                <span class="metric">Deep learning</span>
+                <span class="metric">92% accuracy</span>
+                <span class="metric">Real-time analysis</span>
+              </div>
+              <p class="project__desc">
+                A diagnostic tool for early dyslexia detection from handwriting, using
+                convolutional neural networks for pattern recognition.
+              </p>
+              <div class="achievements">
+                <div class="achievement"><i class="ph ph-target"></i><span>92% detection accuracy on the test set</span></div>
+                <div class="achievement"><i class="ph ph-stack"></i><span>Trained on 1,000+ handwriting samples</span></div>
+                <div class="achievement"><i class="ph ph-timer"></i><span>Analysis completes in under 3 seconds</span></div>
+              </div>
+              <p class="project__stack">Python · TensorFlow · OpenCV · CNN · Computer Vision</p>
+              <div class="project__links">
+                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project reveal">
+            <div class="project__media" aria-hidden="true">
+              <span class="media-tag">Full-stack · Commerce</span>
+              <i class="ph ph-shopping-bag media-mark"></i>
+            </div>
+            <div class="project__body">
+              <span class="project__index">05 / 05</span>
+              <h3 class="project__title">E-commerce mobile platform</h3>
+              <div class="metrics">
+                <span class="metric">Full-stack</span>
+                <span class="metric">Microservices</span>
+                <span class="metric">Real-time</span>
+              </div>
+              <p class="project__desc">
+                A full-stack commerce app built on a microservices architecture, with
+                real-time, GPS-based order tracking and Stripe checkout.
+              </p>
+              <div class="achievements">
+                <div class="achievement"><i class="ph ph-squares-four"></i><span>Microservices architecture for independent scaling</span></div>
+                <div class="achievement"><i class="ph ph-truck"></i><span>Real-time, GPS-based order tracking</span></div>
+                <div class="achievement"><i class="ph ph-credit-card"></i><span>Stripe-powered checkout</span></div>
+              </div>
+              <p class="project__stack">React Native · Node.js · MongoDB · Stripe · Socket.io · Redis</p>
+              <div class="project__links">
+                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section container" id="skills">
+        <div class="section-head">
+          <span class="eyebrow reveal">Toolbox</span>
+          <h2 class="reveal" style="--i: 1">Technical skills</h2>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-group reveal">
+            <h3><i class="ph ph-brackets-curly"></i>Languages</h3>
+            <div class="chips">
+              <span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+              <span class="chip">Python</span><span class="chip">SQL</span>
+            </div>
+          </div>
+          <div class="skill-group reveal" style="--i: 1">
+            <h3><i class="ph ph-devices"></i>Frontend &amp; mobile</h3>
+            <div class="chips">
+              <span class="chip">React Native</span><span class="chip">React.js</span>
+              <span class="chip">Next.js</span><span class="chip">HTML5</span>
+              <span class="chip">CSS3</span><span class="chip">Tailwind</span>
+            </div>
+          </div>
+          <div class="skill-group reveal" style="--i: 2">
+            <h3><i class="ph ph-stack"></i>Backend &amp; APIs</h3>
+            <div class="chips">
+              <span class="chip">Node.js</span><span class="chip">Express</span>
+              <span class="chip">Django</span><span class="chip">REST</span>
+              <span class="chip">GraphQL</span>
+            </div>
+          </div>
+          <div class="skill-group reveal" style="--i: 3">
+            <h3><i class="ph ph-cloud"></i>Cloud &amp; data</h3>
+            <div class="chips">
+              <span class="chip">AWS Lambda</span><span class="chip">S3</span>
+              <span class="chip">DynamoDB</span><span class="chip">API Gateway</span>
+              <span class="chip">MongoDB</span><span class="chip">Firebase</span>
+              <span class="chip">Supabase</span>
+            </div>
+          </div>
+          <div class="skill-group reveal" style="--i: 4">
+            <h3><i class="ph ph-wrench"></i>Tools &amp; DevOps</h3>
+            <div class="chips">
+              <span class="chip">Git</span><span class="chip">Docker</span>
+              <span class="chip">Terraform</span><span class="chip">Linux</span>
+              <span class="chip">Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CERTIFICATIONS ============ -->
+      <section class="section--tight container" id="certifications">
+        <div class="section-head">
+          <span class="eyebrow reveal">Verified</span>
+          <h2 class="reveal" style="--i: 1">Certifications</h2>
+        </div>
+        <div class="certs__grid">
+          <a class="cert reveal" href="https://www.coursera.org/account/accomplishments/records/5XSVF1UVCJY0" target="_blank" rel="noopener">
+            <div><h3>AWS Cloud Practitioner</h3><p>Amazon Web Services</p></div>
+            <i class="ph ph-arrow-up-right cert__arrow"></i>
+          </a>
+          <a class="cert reveal" style="--i: 1" href="https://www.coursera.org/account/accomplishments/records/34TLRWTW0F0R" target="_blank" rel="noopener">
+            <div><h3>Introduction to DevOps</h3><p>IBM</p></div>
+            <i class="ph ph-arrow-up-right cert__arrow"></i>
+          </a>
+          <a class="cert reveal" style="--i: 2" href="https://www.coursera.org/account/accomplishments/records/ZRW0VXC8W7DG" target="_blank" rel="noopener">
+            <div><h3>React Native</h3><p>Meta</p></div>
+            <i class="ph ph-arrow-up-right cert__arrow"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section container" id="contact">
+        <div class="contact__panel reveal">
+          <div class="contact__head">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Let's build something together.</h2>
+            <p>
+              Open to full-time roles and consulting work, remote or in the UK. The
+              fastest way to reach me is email.
+            </p>
+            <a href="mailto:biszaal@gmail.com" class="btn btn--primary">
+              Email me
+              <span class="btn__icon"><i class="ph ph-arrow-up-right"></i></span>
             </a>
-          </li>
-          <li class="social-list__item">
-            <a class="social-list__link" href="https://www.linkedin.com/in/biszaal/">
-              <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact__list">
+            <a class="contact__item" href="mailto:biszaal@gmail.com">
+              <i class="ph ph-envelope-simple"></i>
+              <span class="meta"><span>Email</span><strong>biszaal@gmail.com</strong></span>
             </a>
-          </li>
-        </ul>
+            <a class="contact__item" href="tel:+447729411417">
+              <i class="ph ph-phone"></i>
+              <span class="meta"><span>Phone</span><strong>+44 7729 411417</strong></span>
+            </a>
+            <div class="contact__item">
+              <i class="ph ph-map-pin"></i>
+              <span class="meta"><span>Location</span><strong>Watford, United Kingdom</strong></span>
+            </div>
+            <a class="contact__item" href="./Resume_Bishal.pdf" download="Bishnu_Aryal_Resume.pdf">
+              <i class="ph ph-file-arrow-down"></i>
+              <span class="meta"><span>Resume</span><strong>Download CV (PDF)</strong></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">Bishnu Aryal</div>
+        <p class="footer__copy">© <span id="year">2026</span> Bishnu Prasad Aryal. Built from scratch in Watford.</p>
+        <div class="socials">
+          <a href="https://github.com/biszaal/" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+          <a href="https://www.linkedin.com/in/biszaal/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        </div>
       </div>
     </footer>
 
