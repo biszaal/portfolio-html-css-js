@@ -538,12 +538,22 @@ body.menu-open .mobile-menu a {
   gap: 0.9rem;
 }
 
-/* Hero visual — abstract glass code panel (double-bezel) */
+/* Hero visual — interactive Three.js particle orb */
 .hero__visual {
   position: relative;
   justify-self: end;
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
+}
+.hero__canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.hero__canvas:active {
+  cursor: grabbing;
 }
 .glass-card {
   padding: 0.5rem;

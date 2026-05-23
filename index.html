@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,10 @@
       name="description"
       content="Bishnu Prasad Aryal — full-stack and React Native developer in Watford, UK. Building cross-platform apps, serverless AWS systems, and AI-powered tools."
     />
-    <meta property="og:title" content="Bishnu Aryal — Full-Stack & Mobile Developer" />
+    <meta
+      property="og:title"
+      content="Bishnu Aryal — Full-Stack & Mobile Developer"
+    />
     <meta
       property="og:description"
       content="Cross-platform apps, serverless AWS systems, and AI-powered tools — built with measurable impact."
@@ -29,6 +32,15 @@
     <!-- Phosphor icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
+    <!-- Three.js module map (hero orb) -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -38,7 +50,9 @@
     <!-- ============ NAV ============ -->
     <header class="site-header">
       <nav class="nav" aria-label="Primary">
-        <a href="#home" class="nav__brand"><span class="dot"></span>Bishnu Aryal</a>
+        <a href="#home" class="nav__brand"
+          ><span class="dot"></span>Bishnu Aryal</a
+        >
         <ul class="nav__links">
           <li><a href="#about" class="nav__link">About</a></li>
           <li><a href="#experience" class="nav__link">Experience</a></li>
@@ -52,7 +66,12 @@
             <span class="btn__icon"><i class="ph ph-arrow-up-right"></i></span>
           </a>
         </span>
-        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <button
+          class="nav__toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
           <span></span>
         </button>
       </nav>
@@ -73,49 +92,51 @@
       <section class="hero container" id="home">
         <div class="hero__inner">
           <div class="hero__content">
-            <span class="eyebrow reveal">Full-stack &amp; mobile developer</span>
+            <span class="eyebrow reveal"
+              >Full-stack &amp; mobile developer</span
+            >
             <h1 class="hero__title reveal" style="--i: 1">
               I build software<br />that <em>ships</em>.
             </h1>
             <p class="hero__lede reveal" style="--i: 2">
-              From a developer internship in Tokyo to leading mobile builds in the UK
-              — I design and ship <b>cross-platform apps</b>, <b>serverless AWS
-              systems</b>, and <b>AI-powered tools</b> with measurable impact.
+              From a developer internship in Tokyo to leading mobile builds in
+              the UK — I design and ship <b>cross-platform apps</b>,
+              <b>serverless AWS systems</b>, and <b>AI-powered tools</b> with
+              measurable impact.
             </p>
             <div class="hero__actions reveal" style="--i: 3">
               <a href="#work" class="btn btn--primary">
                 View my work
                 <span class="btn__icon"><i class="ph ph-arrow-down"></i></span>
               </a>
-              <a href="./Resume_Bishal.pdf" download="Bishnu_Aryal_Resume.pdf" class="btn btn--ghost">
+              <a
+                href="./Resume_Bishal.pdf"
+                download="Bishnu_Aryal_Resume.pdf"
+                class="btn btn--ghost"
+              >
                 Download CV
-                <span class="btn__icon"><i class="ph ph-arrow-down-simple"></i></span>
+                <span class="btn__icon"
+                  ><i class="ph ph-arrow-down-simple"></i
+                ></span>
               </a>
             </div>
           </div>
 
           <div class="hero__visual reveal" style="--i: 2" aria-hidden="true">
-            <div class="glass-card">
-              <div class="glass-card__inner">
-                <div class="code-head">
-                  <span class="dots"><i></i><i></i><i></i></span>
-                  <span class="fname">developer.ts</span>
-                </div>
-                <div class="code-body">
-                  <span class="ln"><span class="c">// 3+ years building for production</span></span>
-                  <span class="ln"><span class="k">const</span> bishnu = {</span>
-                  <span class="ln">  role: <span class="s">"React Native Developer"</span>,</span>
-                  <span class="ln">  base: <span class="s">"Watford, UK"</span>,</span>
-                  <span class="ln">  stack: [<span class="s">"TypeScript"</span>, <span class="s">"AWS"</span>],</span>
-                  <span class="ln">  focus: <span class="s">"apps that scale"</span>,</span>
-                  <span class="ln">  shipping: <span class="k">true</span><span class="cursor"></span></span>
-                  <span class="ln">};</span>
+            <canvas id="hero-orb" class="hero__canvas"></canvas>
+            <noscript>
+              <div class="glass-card">
+                <div class="glass-card__inner">
+                  <div class="code-body">
+                    <span class="ln"><span class="c">// full-stack &amp; mobile</span></span>
+                    <span class="ln"><span class="k">const</span> bishnu = { shipping: <span class="k">true</span> };</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </noscript>
             <div class="badge-float">
               <i class="ph ph-briefcase"></i>
-              React Native @ Techmax
+              React Native @ Expenzez
             </div>
           </div>
         </div>
@@ -140,7 +161,9 @@
             </div>
             <div class="stat reveal" style="--i: 3">
               <div class="stat__num num">3</div>
-              <div class="stat__label">Products built end-to-end — Expenzez, iTrackHabit, Rush Laundry</div>
+              <div class="stat__label">
+                Products built end-to-end — Expenzez, iTrackHabit, Rush Laundry
+              </div>
             </div>
           </div>
         </div>
@@ -152,28 +175,29 @@
         <div class="about__grid">
           <div class="about__lead reveal">
             A full-stack developer who cares about the <em>craft</em> behind the
-            product — clean architecture, real performance, and interfaces people
-            actually enjoy using.
+            product — clean architecture, real performance, and interfaces
+            people actually enjoy using.
           </div>
           <div class="about__body">
             <p class="reveal" style="--i: 1">
-              <strong>The journey.</strong> I started in Tokyo with a BS in Computer
-              Science from Temple University's Japan campus, then earned an MSc in
-              Computer Science from Birmingham City University with Distinction. Along
-              the way I moved from IoT prototypes to shipping mobile apps used in the
-              real world.
+              <strong>The journey.</strong> I started in Tokyo with a BS in
+              Computer Science from Temple University's Japan campus, then
+              earned an MSc in Computer Science from Birmingham City University
+              with Distinction. Along the way I moved from IoT prototypes to
+              shipping mobile apps used in the real world.
             </p>
             <p class="reveal" style="--i: 2">
-              <strong>What I do now.</strong> I'm a React Native developer building
-              cross-platform apps backed by Node.js APIs and serverless AWS. I've led
-              frontend and backend work, mentored junior developers, and tuned systems
-              for speed — cutting API response times by 60% and load times by 40%.
+              <strong>What I do now.</strong> I'm a React Native developer
+              building cross-platform apps backed by Node.js APIs and serverless
+              AWS. I've led frontend and backend work, mentored junior
+              developers, and tuned systems for speed — cutting API response
+              times by 60% and load times by 40%.
             </p>
             <p class="reveal" style="--i: 3">
-              <strong>How I work.</strong> I like problems that span the stack: a clean
-              mobile UI, a resilient API behind it, and the cloud plumbing that keeps it
-              fast and cheap. I'm just as comfortable with a machine-learning pipeline as
-              a CI/CD one.
+              <strong>How I work.</strong> I like problems that span the stack:
+              a clean mobile UI, a resilient API behind it, and the cloud
+              plumbing that keeps it fast and cheap. I'm just as comfortable
+              with a machine-learning pipeline as a CI/CD one.
             </p>
           </div>
         </div>
@@ -185,8 +209,8 @@
           <span class="eyebrow reveal">The path so far</span>
           <h2 class="reveal" style="--i: 1">Experience</h2>
           <p class="reveal" style="--i: 2">
-            Three roles across two continents, each one a step deeper into building
-            software that real users depend on.
+            Three roles across two continents, each one a step deeper into
+            building software that real users depend on.
           </p>
         </div>
 
@@ -196,9 +220,18 @@
             <h3 class="t-item__role">React Native Developer</h3>
             <p class="t-item__org">Techmax · Birmingham, UK</p>
             <ul>
-              <li>Build cross-platform mobile apps in React Native with an AWS backend.</li>
-              <li>Implement serverless flows with Lambda, DynamoDB, and API Gateway.</li>
-              <li>Partner with teams to ship scalable features against business needs.</li>
+              <li>
+                Build cross-platform mobile apps in React Native with an AWS
+                backend.
+              </li>
+              <li>
+                Implement serverless flows with Lambda, DynamoDB, and API
+                Gateway.
+              </li>
+              <li>
+                Partner with teams to ship scalable features against business
+                needs.
+              </li>
               <li>Optimised app performance for 40% faster load times.</li>
             </ul>
             <div class="tags">
@@ -213,14 +246,24 @@
             <h3 class="t-item__role">Full-Stack Developer</h3>
             <p class="t-item__org">Rush Laundry · Birmingham, UK</p>
             <ul>
-              <li>Built a complete React Native app with a Node.js and MongoDB backend.</li>
-              <li>Led frontend and backend work and mentored junior developers.</li>
-              <li>Deployed AWS services for high availability and performance.</li>
-              <li>Cut API response times by 60% through database optimisation.</li>
+              <li>
+                Built a complete React Native app with a Node.js and MongoDB
+                backend.
+              </li>
+              <li>
+                Led frontend and backend work and mentored junior developers.
+              </li>
+              <li>
+                Deployed AWS services for high availability and performance.
+              </li>
+              <li>
+                Cut API response times by 60% through database optimisation.
+              </li>
             </ul>
             <div class="tags">
-              <span class="tag">React Native</span><span class="tag">Node.js</span>
-              <span class="tag">MongoDB</span><span class="tag">AWS</span>
+              <span class="tag">React Native</span
+              ><span class="tag">Node.js</span> <span class="tag">MongoDB</span
+              ><span class="tag">AWS</span>
               <span class="tag">Mentoring</span>
             </div>
           </article>
@@ -230,8 +273,14 @@
             <h3 class="t-item__role">Software Developer Intern</h3>
             <p class="t-item__org">IT-Deutschland GBS · Tokyo, Japan</p>
             <ul>
-              <li>Built Python APIs and IoT solutions on Raspberry Pi for real-time data.</li>
-              <li>Created a Django web app with secure authentication and data management.</li>
+              <li>
+                Built Python APIs and IoT solutions on Raspberry Pi for
+                real-time data.
+              </li>
+              <li>
+                Created a Django web app with secure authentication and data
+                management.
+              </li>
               <li>Implemented real-time data-visualisation dashboards.</li>
               <li>Contributed to 3 IoT projects serving 1,000+ users.</li>
             </ul>
@@ -249,18 +298,21 @@
           <span class="eyebrow reveal">What I build</span>
           <h2 class="reveal" style="--i: 1">Capabilities</h2>
           <p class="reveal" style="--i: 2">
-            Four areas where I do my best work — from the screen in your hand to the
-            cloud that powers it.
+            Four areas where I do my best work — from the screen in your hand to
+            the cloud that powers it.
           </p>
         </div>
 
         <div class="bento">
           <article class="cap reveal">
-            <span class="cap__icon"><i class="ph ph-device-mobile-camera"></i></span>
+            <span class="cap__icon"
+              ><i class="ph ph-device-mobile-camera"></i
+            ></span>
             <h3>Cross-platform mobile</h3>
             <p>
-              High-performance React Native apps for iOS and Android — native modules,
-              push notifications, offline support, and store deployment.
+              High-performance React Native apps for iOS and Android — native
+              modules, push notifications, offline support, and store
+              deployment.
             </p>
             <ul class="cap__features">
               <li>95%+ shared code across platforms</li>
@@ -273,8 +325,8 @@
             <span class="cap__icon"><i class="ph ph-cloud"></i></span>
             <h3>Cloud &amp; DevOps</h3>
             <p>
-              Scalable, cost-aware AWS architecture — serverless services, IaC, and
-              automated pipelines for enterprise-grade apps.
+              Scalable, cost-aware AWS architecture — serverless services, IaC,
+              and automated pipelines for enterprise-grade apps.
             </p>
             <ul class="cap__features">
               <li>Lambda, API Gateway, DynamoDB</li>
@@ -288,8 +340,9 @@
               <span class="cap__icon"><i class="ph ph-brain"></i></span>
               <h3>AI &amp; machine learning</h3>
               <p>
-                Computer vision, NLP, and predictive analytics that ship — including a
-                diagnostic tool that reached 92% accuracy on its test set.
+                Computer vision, NLP, and predictive analytics that ship —
+                including a diagnostic tool that reached 92% accuracy on its
+                test set.
               </p>
             </div>
             <ul class="cap__features">
@@ -305,8 +358,8 @@
               <span class="cap__icon"><i class="ph ph-code"></i></span>
               <h3>Full-stack web</h3>
               <p>
-                End-to-end web apps with modern frameworks — scalable, maintainable, and
-                tuned for high traffic.
+                End-to-end web apps with modern frameworks — scalable,
+                maintainable, and tuned for high traffic.
               </p>
             </div>
             <ul class="cap__features">
@@ -325,8 +378,9 @@
           <span class="eyebrow reveal">Selected work</span>
           <h2 class="reveal" style="--i: 1">Things I've built</h2>
           <p class="reveal" style="--i: 2">
-            A few projects that show the range — finance, habits, healthcare AI, and
-            commerce. Screenshots are placeholders; swap in real ones anytime.
+            A few projects that show the range — finance, habits, healthcare AI,
+            and commerce. Screenshots are placeholders; swap in real ones
+            anytime.
           </p>
         </div>
 
@@ -339,32 +393,75 @@
             </div>
             <div class="project__body">
               <span class="project__index">01 / 05</span>
-              <h3 class="project__title">Expenzez — personal finance tracker</h3>
+              <h3 class="project__title">
+                Expenzez — personal finance tracker
+              </h3>
               <div class="metrics">
                 <span class="metric">Cross-platform</span>
                 <span class="metric">AI insights</span>
                 <span class="metric">Serverless AWS</span>
               </div>
               <p class="project__desc">
-                A React Native expense tracker that imports transactions manually, by
-                CSV, or from bank statements, auto-categorises spending, and surfaces
-                budgets, goals, and trends — with AI-generated insights.
+                A React Native expense tracker that imports transactions
+                manually, by CSV, or from bank statements, auto-categorises
+                spending, and surfaces budgets, goals, and trends — with
+                AI-generated insights.
               </p>
               <div class="achievements">
-                <div class="achievement"><i class="ph ph-brain"></i><span>AI categorisation and spending insights via OpenAI</span></div>
-                <div class="achievement"><i class="ph ph-cloud"></i><span>Serverless AWS backend — Lambda with Cognito auth</span></div>
-                <div class="achievement"><i class="ph ph-lock-key"></i><span>Budgets, goals, bill reminders, and PIN security</span></div>
+                <div class="achievement">
+                  <i class="ph ph-brain"></i
+                  ><span
+                    >AI categorisation and spending insights via OpenAI</span
+                  >
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-cloud"></i
+                  ><span
+                    >Serverless AWS backend — Lambda with Cognito auth</span
+                  >
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-lock-key"></i
+                  ><span>Budgets, goals, bill reminders, and PIN security</span>
+                </div>
               </div>
-              <p class="project__stack">React Native · Expo · AWS Lambda · DynamoDB · Cognito · OpenAI · Node.js</p>
+              <p class="project__stack">
+                React Native · Expo · AWS Lambda · DynamoDB · Cognito · OpenAI ·
+                Node.js
+              </p>
               <div class="project__links">
-                <a href="https://apps.apple.com/app/id6751338089" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                  App Store <span class="btn__icon"><i class="ph ph-apple-logo"></i></span>
+                <a
+                  href="https://apps.apple.com/app/id6751338089"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary btn--sm"
+                >
+                  App Store
+                  <span class="btn__icon"
+                    ><i class="ph ph-apple-logo"></i
+                  ></span>
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.biszaaltech.expenzez" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  Play Store <span class="btn__icon"><i class="ph ph-google-play-logo"></i></span>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.biszaaltech.expenzez"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  Play Store
+                  <span class="btn__icon"
+                    ><i class="ph ph-google-play-logo"></i
+                  ></span>
                 </a>
-                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                <a
+                  href="https://github.com/biszaal"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  GitHub
+                  <span class="btn__icon"
+                    ><i class="ph ph-github-logo"></i
+                  ></span>
                 </a>
               </div>
             </div>
@@ -385,19 +482,38 @@
                 <span class="metric">Analytics</span>
               </div>
               <p class="project__desc">
-                A habit tracker built around streaks and accountability — achievements,
-                social challenges with friends, an analytics calendar, and AI-generated
-                insights to keep momentum going.
+                A habit tracker built around streaks and accountability —
+                achievements, social challenges with friends, an analytics
+                calendar, and AI-generated insights to keep momentum going.
               </p>
               <div class="achievements">
-                <div class="achievement"><i class="ph ph-brain"></i><span>AI insights and progress analytics</span></div>
-                <div class="achievement"><i class="ph ph-users-three"></i><span>Social challenges and friends for accountability</span></div>
-                <div class="achievement"><i class="ph ph-trophy"></i><span>Achievements, streaks, and smart reminders</span></div>
+                <div class="achievement">
+                  <i class="ph ph-brain"></i
+                  ><span>AI insights and progress analytics</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-users-three"></i
+                  ><span>Social challenges and friends for accountability</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-trophy"></i
+                  ><span>Achievements, streaks, and smart reminders</span>
+                </div>
               </div>
-              <p class="project__stack">React Native · Expo · TypeScript · Push notifications</p>
+              <p class="project__stack">
+                React Native · Expo · TypeScript · Push notifications
+              </p>
               <div class="project__links">
-                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                <a
+                  href="https://github.com/biszaal"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  View on GitHub
+                  <span class="btn__icon"
+                    ><i class="ph ph-github-logo"></i
+                  ></span>
                 </a>
               </div>
             </div>
@@ -411,7 +527,9 @@
             </div>
             <div class="project__body">
               <span class="project__index">03 / 05</span>
-              <h3 class="project__title">Rush Laundry — on-demand laundry platform</h3>
+              <h3 class="project__title">
+                Rush Laundry — on-demand laundry platform
+              </h3>
               <div class="metrics">
                 <span class="metric">Three roles</span>
                 <span class="metric">Real-time orders</span>
@@ -419,18 +537,41 @@
               </div>
               <p class="project__desc">
                 An on-demand laundry marketplace connecting customers, laundry
-                businesses, and delivery riders — with live order tracking and in-app
-                payments. I built the React Native app and the Node.js / MongoDB backend.
+                businesses, and delivery riders — with live order tracking and
+                in-app payments. I built the React Native app and the Node.js /
+                MongoDB backend.
               </p>
               <div class="achievements">
-                <div class="achievement"><i class="ph ph-users-three"></i><span>Customer, laundry, and rider flows in one platform</span></div>
-                <div class="achievement"><i class="ph ph-broadcast"></i><span>Real-time order updates over Socket.io</span></div>
-                <div class="achievement"><i class="ph ph-credit-card"></i><span>In-app payments with Stripe</span></div>
+                <div class="achievement">
+                  <i class="ph ph-users-three"></i
+                  ><span
+                    >Customer, laundry, and rider flows in one platform</span
+                  >
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-broadcast"></i
+                  ><span>Real-time order updates over Socket.io</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-credit-card"></i
+                  ><span>In-app payments with Stripe</span>
+                </div>
               </div>
-              <p class="project__stack">React Native · Expo · Node.js · Express · MongoDB · Socket.io · Stripe</p>
+              <p class="project__stack">
+                React Native · Expo · Node.js · Express · MongoDB · Socket.io ·
+                Stripe
+              </p>
               <div class="project__links">
-                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                <a
+                  href="https://github.com/biszaal"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  View on GitHub
+                  <span class="btn__icon"
+                    ><i class="ph ph-github-logo"></i
+                  ></span>
                 </a>
               </div>
             </div>
@@ -451,18 +592,37 @@
                 <span class="metric">Real-time analysis</span>
               </div>
               <p class="project__desc">
-                A diagnostic tool for early dyslexia detection from handwriting, using
-                convolutional neural networks for pattern recognition.
+                A diagnostic tool for early dyslexia detection from handwriting,
+                using convolutional neural networks for pattern recognition.
               </p>
               <div class="achievements">
-                <div class="achievement"><i class="ph ph-target"></i><span>92% detection accuracy on the test set</span></div>
-                <div class="achievement"><i class="ph ph-stack"></i><span>Trained on 1,000+ handwriting samples</span></div>
-                <div class="achievement"><i class="ph ph-timer"></i><span>Analysis completes in under 3 seconds</span></div>
+                <div class="achievement">
+                  <i class="ph ph-target"></i
+                  ><span>92% detection accuracy on the test set</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-stack"></i
+                  ><span>Trained on 1,000+ handwriting samples</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-timer"></i
+                  ><span>Analysis completes in under 3 seconds</span>
+                </div>
               </div>
-              <p class="project__stack">Python · TensorFlow · OpenCV · CNN · Computer Vision</p>
+              <p class="project__stack">
+                Python · TensorFlow · OpenCV · CNN · Computer Vision
+              </p>
               <div class="project__links">
-                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                <a
+                  href="https://github.com/biszaal"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  View on GitHub
+                  <span class="btn__icon"
+                    ><i class="ph ph-github-logo"></i
+                  ></span>
                 </a>
               </div>
             </div>
@@ -483,18 +643,39 @@
                 <span class="metric">Real-time</span>
               </div>
               <p class="project__desc">
-                A full-stack commerce app built on a microservices architecture, with
-                real-time, GPS-based order tracking and Stripe checkout.
+                A full-stack commerce app built on a microservices architecture,
+                with real-time, GPS-based order tracking and Stripe checkout.
               </p>
               <div class="achievements">
-                <div class="achievement"><i class="ph ph-squares-four"></i><span>Microservices architecture for independent scaling</span></div>
-                <div class="achievement"><i class="ph ph-truck"></i><span>Real-time, GPS-based order tracking</span></div>
-                <div class="achievement"><i class="ph ph-credit-card"></i><span>Stripe-powered checkout</span></div>
+                <div class="achievement">
+                  <i class="ph ph-squares-four"></i
+                  ><span
+                    >Microservices architecture for independent scaling</span
+                  >
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-truck"></i
+                  ><span>Real-time, GPS-based order tracking</span>
+                </div>
+                <div class="achievement">
+                  <i class="ph ph-credit-card"></i
+                  ><span>Stripe-powered checkout</span>
+                </div>
               </div>
-              <p class="project__stack">React Native · Node.js · MongoDB · Stripe · Socket.io · Redis</p>
+              <p class="project__stack">
+                React Native · Node.js · MongoDB · Stripe · Socket.io · Redis
+              </p>
               <div class="project__links">
-                <a href="https://github.com/biszaal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                  View on GitHub <span class="btn__icon"><i class="ph ph-github-logo"></i></span>
+                <a
+                  href="https://github.com/biszaal"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost btn--sm"
+                >
+                  View on GitHub
+                  <span class="btn__icon"
+                    ><i class="ph ph-github-logo"></i
+                  ></span>
                 </a>
               </div>
             </div>
@@ -513,14 +694,16 @@
           <div class="skill-group reveal">
             <h3><i class="ph ph-brackets-curly"></i>Languages</h3>
             <div class="chips">
-              <span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+              <span class="chip">JavaScript</span
+              ><span class="chip">TypeScript</span>
               <span class="chip">Python</span><span class="chip">SQL</span>
             </div>
           </div>
           <div class="skill-group reveal" style="--i: 1">
             <h3><i class="ph ph-devices"></i>Frontend &amp; mobile</h3>
             <div class="chips">
-              <span class="chip">React Native</span><span class="chip">React.js</span>
+              <span class="chip">React Native</span
+              ><span class="chip">React.js</span>
               <span class="chip">Next.js</span><span class="chip">HTML5</span>
               <span class="chip">CSS3</span><span class="chip">Tailwind</span>
             </div>
@@ -537,8 +720,10 @@
             <h3><i class="ph ph-cloud"></i>Cloud &amp; data</h3>
             <div class="chips">
               <span class="chip">AWS Lambda</span><span class="chip">S3</span>
-              <span class="chip">DynamoDB</span><span class="chip">API Gateway</span>
-              <span class="chip">MongoDB</span><span class="chip">Firebase</span>
+              <span class="chip">DynamoDB</span
+              ><span class="chip">API Gateway</span>
+              <span class="chip">MongoDB</span
+              ><span class="chip">Firebase</span>
               <span class="chip">Supabase</span>
             </div>
           </div>
@@ -560,16 +745,42 @@
           <h2 class="reveal" style="--i: 1">Certifications</h2>
         </div>
         <div class="certs__grid">
-          <a class="cert reveal" href="https://www.coursera.org/account/accomplishments/records/5XSVF1UVCJY0" target="_blank" rel="noopener">
-            <div><h3>AWS Cloud Practitioner</h3><p>Amazon Web Services</p></div>
+          <a
+            class="cert reveal"
+            href="https://www.coursera.org/account/accomplishments/records/5XSVF1UVCJY0"
+            target="_blank"
+            rel="noopener"
+          >
+            <div>
+              <h3>AWS Cloud Practitioner</h3>
+              <p>Amazon Web Services</p>
+            </div>
             <i class="ph ph-arrow-up-right cert__arrow"></i>
           </a>
-          <a class="cert reveal" style="--i: 1" href="https://www.coursera.org/account/accomplishments/records/34TLRWTW0F0R" target="_blank" rel="noopener">
-            <div><h3>Introduction to DevOps</h3><p>IBM</p></div>
+          <a
+            class="cert reveal"
+            style="--i: 1"
+            href="https://www.coursera.org/account/accomplishments/records/34TLRWTW0F0R"
+            target="_blank"
+            rel="noopener"
+          >
+            <div>
+              <h3>Introduction to DevOps</h3>
+              <p>IBM</p>
+            </div>
             <i class="ph ph-arrow-up-right cert__arrow"></i>
           </a>
-          <a class="cert reveal" style="--i: 2" href="https://www.coursera.org/account/accomplishments/records/ZRW0VXC8W7DG" target="_blank" rel="noopener">
-            <div><h3>React Native</h3><p>Meta</p></div>
+          <a
+            class="cert reveal"
+            style="--i: 2"
+            href="https://www.coursera.org/account/accomplishments/records/ZRW0VXC8W7DG"
+            target="_blank"
+            rel="noopener"
+          >
+            <div>
+              <h3>React Native</h3>
+              <p>Meta</p>
+            </div>
             <i class="ph ph-arrow-up-right cert__arrow"></i>
           </a>
         </div>
@@ -582,30 +793,45 @@
             <span class="eyebrow">Get in touch</span>
             <h2>Let's build something together.</h2>
             <p>
-              Open to full-time roles and consulting work, remote or in the UK. The
-              fastest way to reach me is email.
+              Open to full-time roles and consulting work, remote or in the UK.
+              The fastest way to reach me is email.
             </p>
             <a href="mailto:biszaal@gmail.com" class="btn btn--primary">
               Email me
-              <span class="btn__icon"><i class="ph ph-arrow-up-right"></i></span>
+              <span class="btn__icon"
+                ><i class="ph ph-arrow-up-right"></i
+              ></span>
             </a>
           </div>
           <div class="contact__list">
             <a class="contact__item" href="mailto:biszaal@gmail.com">
               <i class="ph ph-envelope-simple"></i>
-              <span class="meta"><span>Email</span><strong>biszaal@gmail.com</strong></span>
+              <span class="meta"
+                ><span>Email</span><strong>biszaal@gmail.com</strong></span
+              >
             </a>
             <a class="contact__item" href="tel:+447729411417">
               <i class="ph ph-phone"></i>
-              <span class="meta"><span>Phone</span><strong>+44 7729 411417</strong></span>
+              <span class="meta"
+                ><span>Phone</span><strong>+44 7729 411417</strong></span
+              >
             </a>
             <div class="contact__item">
               <i class="ph ph-map-pin"></i>
-              <span class="meta"><span>Location</span><strong>Watford, United Kingdom</strong></span>
+              <span class="meta"
+                ><span>Location</span
+                ><strong>Watford, United Kingdom</strong></span
+              >
             </div>
-            <a class="contact__item" href="./Resume_Bishal.pdf" download="Bishnu_Aryal_Resume.pdf">
+            <a
+              class="contact__item"
+              href="./Resume_Bishal.pdf"
+              download="Bishnu_Aryal_Resume.pdf"
+            >
               <i class="ph ph-file-arrow-down"></i>
-              <span class="meta"><span>Resume</span><strong>Download CV (PDF)</strong></span>
+              <span class="meta"
+                ><span>Resume</span><strong>Download CV (PDF)</strong></span
+              >
             </a>
           </div>
         </div>
@@ -616,14 +842,30 @@
     <footer class="site-footer">
       <div class="container footer__inner">
         <div class="footer__brand">Bishnu Aryal</div>
-        <p class="footer__copy">© <span id="year">2026</span> Bishnu Prasad Aryal. Built from scratch in Watford.</p>
+        <p class="footer__copy">
+          © <span id="year">2026</span> Bishnu Prasad Aryal. Built from scratch
+          in Watford.
+        </p>
         <div class="socials">
-          <a href="https://github.com/biszaal/" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
-          <a href="https://www.linkedin.com/in/biszaal/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          <a
+            href="https://github.com/biszaal/"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><i class="ph ph-github-logo"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/biszaal/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><i class="ph ph-linkedin-logo"></i
+          ></a>
         </div>
       </div>
     </footer>
 
     <script src="js/index.js"></script>
+    <script type="module" src="js/orb.js"></script>
   </body>
 </html>
