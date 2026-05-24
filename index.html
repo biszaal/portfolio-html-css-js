@@ -9,7 +9,7 @@
     <title>Bishnu Aryal — Full-Stack & Mobile Developer</title>
     <meta
       name="description"
-      content="Bishnu Prasad Aryal — full-stack and React Native developer in Watford, UK. Building cross-platform apps, serverless AWS systems, and AI-powered tools."
+      content="Bishnu Prasad Aryal — full-stack and React Native developer in Birmingham, UK. Building cross-platform apps, serverless AWS systems, and AI-powered tools."
     />
     <meta
       property="og:title"
@@ -38,9 +38,17 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/style.css?v=2" />
+    <link rel="stylesheet" href="css/style.css?v=7" />
     <script>
-      // Mark motion-capable sessions before first paint (prevents reveal flash).
+      // Set theme + motion flag before first paint (no flash). Dark by default.
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
         document.documentElement.classList.add("anim");
     </script>
@@ -65,6 +73,16 @@
           <li><a href="#work" class="nav__link">Work</a></li>
           <li><a href="#skills" class="nav__link">Skills</a></li>
         </ul>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to light mode"
+          title="Toggle theme"
+        >
+          <i class="ph ph-sun" aria-hidden="true"></i>
+          <i class="ph ph-moon" aria-hidden="true"></i>
+          <span class="theme-toggle__thumb" aria-hidden="true"></span>
+        </button>
         <span class="nav__cta">
           <a href="#contact" class="btn btn--primary">
             Let's talk
@@ -98,15 +116,21 @@
         <canvas id="curl" class="hero__canvas" aria-hidden="true"></canvas>
         <div class="hero__overlay container">
           <div class="hero__top">
-            <span class="eyebrow reveal">Full-stack &amp; mobile developer</span>
-            <span class="hero__meta reveal" style="--i: 1">Watford, UK · open to work</span>
+            <span class="eyebrow reveal"
+              >Full-stack &amp; mobile developer</span
+            >
+            <span class="hero__meta reveal" style="--i: 1"
+              >Birmingham, UK · open to work</span
+            >
           </div>
 
           <div class="hero__mid">
             <h1 class="hero__title" style="--i: 1">
               <span class="line"><span>I build</span></span>
               <span class="line"><span>software</span></span>
-              <span class="line"><span>that <em>ships</em>.</span></span>
+              <span class="line"
+                ><span>that <em>ships</em>.</span></span
+              >
             </h1>
           </div>
 
@@ -128,7 +152,9 @@
                 class="btn btn--ghost"
               >
                 Download CV
-                <span class="btn__icon"><i class="ph ph-arrow-down-simple"></i></span>
+                <span class="btn__icon"
+                  ><i class="ph ph-arrow-down-simple"></i
+                ></span>
               </a>
             </div>
           </div>
@@ -165,26 +191,20 @@
       <!-- ============ MARQUEE ============ -->
       <div class="marquee" aria-hidden="true">
         <div class="marquee__track">
-          <span>React Native</span><i class="sep"></i>
-          <span>AWS</span><i class="sep"></i>
-          <span>TypeScript</span><i class="sep"></i>
-          <span>Node.js</span><i class="sep"></i>
-          <span>React</span><i class="sep"></i>
-          <span>Next.js</span><i class="sep"></i>
-          <span>Python</span><i class="sep"></i>
-          <span>MongoDB</span><i class="sep"></i>
-          <span>Serverless</span><i class="sep"></i>
-          <span>AI / ML</span><i class="sep"></i>
-          <span>React Native</span><i class="sep"></i>
-          <span>AWS</span><i class="sep"></i>
-          <span>TypeScript</span><i class="sep"></i>
-          <span>Node.js</span><i class="sep"></i>
-          <span>React</span><i class="sep"></i>
-          <span>Next.js</span><i class="sep"></i>
-          <span>Python</span><i class="sep"></i>
-          <span>MongoDB</span><i class="sep"></i>
-          <span>Serverless</span><i class="sep"></i>
-          <span>AI / ML</span><i class="sep"></i>
+          <span>React Native</span><i class="sep"></i> <span>AWS</span
+          ><i class="sep"></i> <span>TypeScript</span><i class="sep"></i>
+          <span>Node.js</span><i class="sep"></i> <span>React</span
+          ><i class="sep"></i> <span>Next.js</span><i class="sep"></i>
+          <span>Python</span><i class="sep"></i> <span>MongoDB</span
+          ><i class="sep"></i> <span>Serverless</span><i class="sep"></i>
+          <span>AI / ML</span><i class="sep"></i> <span>React Native</span
+          ><i class="sep"></i> <span>AWS</span><i class="sep"></i>
+          <span>TypeScript</span><i class="sep"></i> <span>Node.js</span
+          ><i class="sep"></i> <span>React</span><i class="sep"></i>
+          <span>Next.js</span><i class="sep"></i> <span>Python</span
+          ><i class="sep"></i> <span>MongoDB</span><i class="sep"></i>
+          <span>Serverless</span><i class="sep"></i> <span>AI / ML</span
+          ><i class="sep"></i>
         </div>
       </div>
 
@@ -237,7 +257,7 @@
           <article class="t-item reveal">
             <div class="t-item__date">Aug 2024 — Present</div>
             <h3 class="t-item__role">React Native Developer</h3>
-            <p class="t-item__org">Techmax · Birmingham, UK</p>
+            <p class="t-item__org">Expenzez · Birmingham, UK</p>
             <ul>
               <li>
                 Build cross-platform mobile apps in React Native with an AWS
@@ -557,9 +577,10 @@
                 <span class="metric">Stripe payments</span>
               </div>
               <p class="project__desc">
-                An on-demand laundry marketplace connecting customers, riders, and
-                merchants — with real-time data sync, live order tracking, and
-                in-app payments. I built the mobile apps and the MERN backend.
+                An on-demand laundry marketplace connecting customers, riders,
+                and merchants — with real-time data sync, live order tracking,
+                and in-app payments. I built the mobile apps and the MERN
+                backend.
               </p>
               <div class="achievements">
                 <div class="achievement">
@@ -840,7 +861,7 @@
               <i class="ph ph-map-pin"></i>
               <span class="meta"
                 ><span>Location</span
-                ><strong>Watford, United Kingdom</strong></span
+                ><strong>Birmingham, United Kingdom</strong></span
               >
             </div>
             <a
@@ -864,7 +885,7 @@
         <div class="footer__brand">Bishnu Aryal</div>
         <p class="footer__copy">
           © <span id="year">2026</span> Bishnu Prasad Aryal. Built from scratch
-          in Watford.
+          in Birmingham.
         </p>
         <div class="socials">
           <a
@@ -885,36 +906,8 @@
       </div>
     </footer>
 
-    <script src="js/index.js?v=2"></script>
-    <script src="js/curl-flow.js?v=3"></script>
-    <script>
-      // Boot the curl flow — skip under reduced-motion; pause when off-screen.
-      (function () {
-        var canvas = document.getElementById("curl");
-        if (!canvas || typeof CurlFlow === "undefined") return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
-        var flow = new CurlFlow(canvas, {
-          bg: "#0a0b0d",
-          inkA: "#6ea8fe",
-          inkB: "#cfe6ff",
-          inkC: "#8be0c0",
-          particles: isMobile ? 1600 : 3400,
-          speed: 0.20,
-          fadeAlpha: 0.11,
-        });
-        if ("IntersectionObserver" in window) {
-          new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                e.isIntersecting ? flow.start() : flow.stop();
-              });
-            },
-            { threshold: 0 }
-          ).observe(canvas);
-        }
-      })();
-    </script>
-    <script src="js/motion.js?v=2" defer></script>
+    <script src="js/curl-flow.js?v=4"></script>
+    <script src="js/index.js?v=5"></script>
+    <script src="js/motion.js?v=6" defer></script>
   </body>
 </html>

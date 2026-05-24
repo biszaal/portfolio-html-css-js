@@ -69,4 +69,65 @@
   }
 
   /* Magnetic buttons + custom cursor live in motion.js (motion-on sessions). */
+
+  /* ---------- Theme (dark / light) ---------- */
+  const root = document.documentElement;
+  const themeBtn = document.querySelector(".theme-toggle");
+  const flowPalette = (theme) =>
+    theme === "light"
+      ? { bg: "#f4f5f7", inkA: "#2f6bf6", inkB: "#64748b", inkC: "#0ea5a0", blend: "source-over" }
+      : { bg: "#0a0b0d", inkA: "#6ea8fe", inkB: "#cfe6ff", inkC: "#8be0c0", blend: "lighter" };
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+    if (themeBtn) {
+      themeBtn.setAttribute(
+        "aria-label",
+        theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+      );
+    }
+    const flow = window.__curlFlow;
+    if (flow) {
+      const pal = flowPalette(theme);
+      flow.update(pal);
+      const cv = document.getElementById("curl");
+      if (cv) {
+        const x = cv.getContext("2d");
+        x.fillStyle = pal.bg;
+        x.fillRect(0, 0, cv.width, cv.height);
+      }
+    }
+  };
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () =>
+      applyTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light")
+    );
+  }
+
+  /* ---------- Curl-flow hero background ---------- */
+  const canvas = document.getElementById("curl");
+  if (canvas && typeof CurlFlow !== "undefined" && !reduceMotion) {
+    const isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+    const theme = root.getAttribute("data-theme") || "dark";
+    window.__curlFlow = new CurlFlow(
+      canvas,
+      Object.assign(
+        { particles: isMobile ? 1600 : 3400, speed: 0.15, fadeAlpha: 0.11 },
+        flowPalette(theme)
+      )
+    );
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) =>
+            e.isIntersecting ? window.__curlFlow.start() : window.__curlFlow.stop()
+          ),
+        { threshold: 0 }
+      ).observe(canvas);
+    }
+  }
 })();

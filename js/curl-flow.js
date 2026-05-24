@@ -1,8 +1,7 @@
 // curl-flow.js — drop-in animated background (2D canvas, zero deps)
 // =================================================================
-// Curl-of-fbm-noise particle flow with trail fade + additive blend.
-// Adapted from the Claude Design "Curl Flow" handoff, with added
-// cursor interaction (a swirling vortex that follows the pointer).
+// Curl-of-fbm-noise particle flow with trail fade + additive blend,
+// plus cursor interaction (a swirling vortex that follows the pointer).
 //
 //   const flow = new CurlFlow(canvas, { inkA:'#6ea8fe', ... });
 //   flow.stop() / flow.start() / flow.update({ speed: 3 }) / flow.destroy()
@@ -28,6 +27,7 @@
         noiseScale: 0.0035,
         timeScale: 0.06,
         fadeAlpha: 0.12,
+        blend: "lighter", // "lighter" glows on dark; "source-over" reads on light
         // cursor interaction
         pointer: true,
         pointerRadius: 240,
@@ -169,7 +169,7 @@
     ctx.fillStyle = o.bg;
     ctx.fillRect(0, 0, W, H);
     ctx.globalAlpha = 1;
-    ctx.globalCompositeOperation = "lighter";
+    ctx.globalCompositeOperation = o.blend;
 
     this._t += 1;
     var tz = this._t * o.timeScale * o.noiseScale * 8;
