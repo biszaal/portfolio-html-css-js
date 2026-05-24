@@ -32,20 +32,25 @@
     <!-- Phosphor icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-    <!-- Three.js module map (hero orb) -->
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-        }
-      }
-    </script>
+    <!-- Instrument Serif — headline accent -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
+    <script>
+      // Mark motion-capable sessions before first paint (prevents reveal flash).
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("anim");
+    </script>
   </head>
 
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Custom cursor — minimal invert disc (desktop, motion-on; logic in motion.js) -->
+    <div class="cursor" aria-hidden="true"></div>
 
     <!-- ============ NAV ============ -->
     <header class="site-header">
@@ -89,15 +94,23 @@
 
     <main id="main">
       <!-- ============ HERO ============ -->
-      <section class="hero container" id="home">
-        <div class="hero__inner">
-          <div class="hero__content">
-            <span class="eyebrow reveal"
-              >Full-stack &amp; mobile developer</span
-            >
-            <h1 class="hero__title reveal" style="--i: 1">
-              I build software<br />that <em>ships</em>.
+      <section class="hero" id="home">
+        <canvas id="curl" class="hero__canvas" aria-hidden="true"></canvas>
+        <div class="hero__overlay container">
+          <div class="hero__top">
+            <span class="eyebrow reveal">Full-stack &amp; mobile developer</span>
+            <span class="hero__meta reveal" style="--i: 1">Watford, UK · open to work</span>
+          </div>
+
+          <div class="hero__mid">
+            <h1 class="hero__title" style="--i: 1">
+              <span class="line"><span>I build</span></span>
+              <span class="line"><span>software</span></span>
+              <span class="line"><span>that <em>ships</em>.</span></span>
             </h1>
+          </div>
+
+          <div class="hero__bottom">
             <p class="hero__lede reveal" style="--i: 2">
               From a developer internship in Tokyo to leading mobile builds in
               the UK — I design and ship <b>cross-platform apps</b>,
@@ -115,28 +128,8 @@
                 class="btn btn--ghost"
               >
                 Download CV
-                <span class="btn__icon"
-                  ><i class="ph ph-arrow-down-simple"></i
-                ></span>
+                <span class="btn__icon"><i class="ph ph-arrow-down-simple"></i></span>
               </a>
-            </div>
-          </div>
-
-          <div class="hero__visual reveal" style="--i: 2" aria-hidden="true">
-            <canvas id="hero-orb" class="hero__canvas"></canvas>
-            <noscript>
-              <div class="glass-card">
-                <div class="glass-card__inner">
-                  <div class="code-body">
-                    <span class="ln"><span class="c">// full-stack &amp; mobile</span></span>
-                    <span class="ln"><span class="k">const</span> bishnu = { shipping: <span class="k">true</span> };</span>
-                  </div>
-                </div>
-              </div>
-            </noscript>
-            <div class="badge-float">
-              <i class="ph ph-briefcase"></i>
-              React Native @ Expenzez
             </div>
           </div>
         </div>
@@ -168,6 +161,32 @@
           </div>
         </div>
       </section>
+
+      <!-- ============ MARQUEE ============ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>React Native</span><i class="sep"></i>
+          <span>AWS</span><i class="sep"></i>
+          <span>TypeScript</span><i class="sep"></i>
+          <span>Node.js</span><i class="sep"></i>
+          <span>React</span><i class="sep"></i>
+          <span>Next.js</span><i class="sep"></i>
+          <span>Python</span><i class="sep"></i>
+          <span>MongoDB</span><i class="sep"></i>
+          <span>Serverless</span><i class="sep"></i>
+          <span>AI / ML</span><i class="sep"></i>
+          <span>React Native</span><i class="sep"></i>
+          <span>AWS</span><i class="sep"></i>
+          <span>TypeScript</span><i class="sep"></i>
+          <span>Node.js</span><i class="sep"></i>
+          <span>React</span><i class="sep"></i>
+          <span>Next.js</span><i class="sep"></i>
+          <span>Python</span><i class="sep"></i>
+          <span>MongoDB</span><i class="sep"></i>
+          <span>Serverless</span><i class="sep"></i>
+          <span>AI / ML</span><i class="sep"></i>
+        </div>
+      </div>
 
       <!-- ============ ABOUT ============ -->
       <section class="section container" id="about">
@@ -866,7 +885,36 @@
       </div>
     </footer>
 
-    <script src="js/index.js"></script>
-    <script type="module" src="js/orb.js"></script>
+    <script src="js/index.js?v=2"></script>
+    <script src="js/curl-flow.js?v=3"></script>
+    <script>
+      // Boot the curl flow — skip under reduced-motion; pause when off-screen.
+      (function () {
+        var canvas = document.getElementById("curl");
+        if (!canvas || typeof CurlFlow === "undefined") return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+        var flow = new CurlFlow(canvas, {
+          bg: "#0a0b0d",
+          inkA: "#6ea8fe",
+          inkB: "#cfe6ff",
+          inkC: "#8be0c0",
+          particles: isMobile ? 1600 : 3400,
+          speed: 0.20,
+          fadeAlpha: 0.11,
+        });
+        if ("IntersectionObserver" in window) {
+          new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                e.isIntersecting ? flow.start() : flow.stop();
+              });
+            },
+            { threshold: 0 }
+          ).observe(canvas);
+        }
+      })();
+    </script>
+    <script src="js/motion.js?v=2" defer></script>
   </body>
 </html>

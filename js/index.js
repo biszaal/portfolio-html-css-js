@@ -68,19 +68,5 @@
     sections.forEach((s) => spy.observe(s));
   }
 
-  /* ---------- Magnetic buttons (pointer-driven, transform only) ---------- */
-  if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".btn--primary").forEach((btn) => {
-      const strength = 0.25;
-      btn.addEventListener("pointermove", (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) * strength;
-        const y = (e.clientY - r.top - r.height / 2) * strength;
-        btn.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
-      });
-      btn.addEventListener("pointerleave", () => {
-        btn.style.transform = "";
-      });
-    });
-  }
+  /* Magnetic buttons + custom cursor live in motion.js (motion-on sessions). */
 })();
